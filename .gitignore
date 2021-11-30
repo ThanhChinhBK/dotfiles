@@ -133,3 +133,23 @@ etc/clusto*.conf
 # Random arbitrary not-really-a-config file,
 # for use with hexdump
 !.config/hexdump.format
+
+## Emacs
+.last-package-update-day
+abbrev_defs
+ac-comphist.dat
+bookmarks
+cider-history
+*.elc
+elpa/
+history
+malabar-mode/
+projects/
+semanticdb
+srecode-map.el
+smex-items
+swank
+url/
+var/
+places
+recentf
