@@ -1,0 +1,1 @@
+("~/.dotfiles/" "~/workspace/rouglike/" "~/workspace/my-ray-tracer-challenge/" "~/workspace/kinto/" "~/workspace/interview-programing-questions/" "~/workspace/cpp_SDL/01_hello_SDL/")
