@@ -261,10 +261,35 @@
 
 
 
-;; C-c C-e to show  errors
-(add-hook 'python-mode-hook
-          (lambda () (local-set-key (kbd "C-c C-e") #'flymake-show-diagnostics-buffer)))
+;; C-s C-e to show  errors
+(defun show-flymake-errors ()
+  (local-set-key (kbd "C-s C-e") #'flymake-show-diagnostics-buffer))
+  
+(add-hook 'python-mode-hook 'show-flymake-errors)
+(add-hook 'c-mode-hook 'show-flymake-errors)
+(add-hook 'c++-mode-hook 'show-flymake-errors)
+
+ 
+
 
 ;; Ret instead Yes/y
 (fset 'yes-or-no-p 'y-or-n-p)  ;; Ask for y/n instead of yes/no
 
+
+
+;; Config for C++
+(which-key-mode)
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
+(setq gc-cons-threshold (* 100 1024 1024)
+      read-process-output-max (* 1024 1024)
+      treemacs-space-between-root-nodes nil
+      company-idle-delay 0.0
+      company-minimum-prefix-length 1
+      lsp-idle-delay 0.1)  ;; clangd is fast
+
+(with-eval-after-load 'lsp-mode
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools)
+  )

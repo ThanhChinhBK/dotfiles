@@ -17,3 +17,6 @@ url/
 var/
 places
 recentf
+.cache/
+.lsp-session-v1
+projectile-bookmarks.eld
