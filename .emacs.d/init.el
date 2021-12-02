@@ -263,7 +263,7 @@
 
 ;; C-s C-e to show  errors
 (defun show-flymake-errors ()
-  (local-set-key (kbd "C-s C-e") #'flymake-show-diagnostics-buffer))
+  (local-set-key (kbd "C-q C-e") #'flymake-show-diagnostics-buffer))
   
 (add-hook 'python-mode-hook 'show-flymake-errors)
 (add-hook 'c-mode-hook 'show-flymake-errors)
@@ -293,3 +293,7 @@
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools)
   )
+
+
+;; not *~ anymore
+(setq backup-directory-alist '(("." . "~/.emacs-saves")))
