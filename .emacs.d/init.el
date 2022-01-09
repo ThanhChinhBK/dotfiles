@@ -13,11 +13,10 @@
 ;; change font
 ;(set-face-attribute 'default nil :font "Fira Code Retina" :height 280)
 
-;; (load-theme 'wombat)
-
 
 ;; Make ESC quit prompts - not my favorite
 ;(global-set-key (kbd "<escape>") 'keyboard-escape-quit)
+
 
 ;; Initialize package sources
 (require 'package)
@@ -89,8 +88,8 @@
   :init (doom-modeline-mode 2)
   :custom ((doom-Modeline-height 12)))
 
- (use-package doom-themes
-   :init (load-theme 'doom-gruvbox-light t))
+; (use-package doom-themes
+;   :init (load-theme 'doom-gruvbox-light t))
 
 ;; column number
 (column-number-mode)
@@ -222,24 +221,6 @@
 
 
 
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("97db542a8a1731ef44b60bc97406c1eb7ed4528b0d7296997cbb53969df852d6" "5784d048e5a985627520beb8a101561b502a191b52fa401139f4dd20acb07607" "4f1d2476c290eaa5d9ab9d13b60f2c0f1c8fa7703596fa91b235db7f99a9441b" default))
- '(lsp-pylsp-plugins-flake8-max-line-length 88)
- '(package-selected-packages
-   '(sml-basis sml-mode smartparens ein lsp-pyright which-key use-package typescript-mode rainbow-delimiters python-mode magit lsp-ui lsp-ivy ivy-rich helpful general doom-themes doom-modeline dap-mode counsel-projectile))
- '(tab-always-indent nil))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-
 (setq tab-always-indent nil)
 
 ;; auto close brace
@@ -293,7 +274,3 @@
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools)
   )
-
-
-;; not *~ anymore
-(setq backup-directory-alist '(("." . "~/.emacs-saves")))
