@@ -91,6 +91,9 @@
 ; (use-package doom-themes
 ;   :init (load-theme 'doom-gruvbox-light t))
 
+(use-package github-theme
+  :init (load-theme 'github t))
+
 ;; column number
 (column-number-mode)
 (global-display-line-numbers-mode t)
@@ -274,3 +277,29 @@
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools)
   )
+
+;; yaml
+(use-package yaml-mode)
+
+;; kill line without copy
+(defun delete-line-no-kill ()
+  (interactive)
+  (delete-region
+   (point)
+   (save-excursion (move-end-of-line 1) (point)))
+ (delete-char 1)
+)
+(global-set-key (kbd "C-k") 'delete-line-no-kill)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(github-theme yaml-mode which-key use-package typescript-mode sml-mode sml-basis smartparens rainbow-delimiters python-mode magit lsp-ui lsp-pyright lsp-ivy ivy-rich helpful general ein doom-themes doom-modeline dap-mode counsel-projectile company)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
