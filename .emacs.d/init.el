@@ -144,8 +144,8 @@
   ("C-c p" . projectile-command-map)
   :init
   ;; NOTE: Set this to the folder where I keep my Git repos
-  (when (file-directory-p "~/workspace")
-    (setq projectile-project-search-path '("~/workspace")))
+  (when (file-directory-p "~/dev")
+    (setq projectile-project-search-path '("~/dev")))
   (setq projectile-switch-project-action #'projectile-dired))
 
 (use-package counsel-projectile
@@ -203,10 +203,7 @@
   (dap-node-setup) ;; Automatically installs Node debug adapter if needed
 
   ;; Bind `C-c l d` to `dap-hydra` for easy access
-  (general-define-key
-    :keymaps 'lsp-mode-map
-    :prefix lsp-keymap-prefix
-    "d" '(dap-hydra t :wk "debugger")))
+)
 
 (use-package python-mode
   :ensure t
